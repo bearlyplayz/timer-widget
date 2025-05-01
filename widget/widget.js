@@ -90,11 +90,9 @@ window.addEventListener('onEventReceived', function (obj) {
       return;
     }
     const event = obj.detail.event;
-    console.debug("########### Event triggered");
     if (event.data.redemption?.toLowerCase() !== triggerPattern) {
       return;
     }
-    console.debug("########### Event", obj.detail.event);
     if (isRunning === undefined) {
       resetWidgetTime();
     }
@@ -113,7 +111,6 @@ window.addEventListener('onWidgetLoad', function (obj) {
     
     showHour = fields["alwaysShowHour"] === "yes" ? true : false;
     showMinute = fields["alwaysShowMinute"] === "yes" ? true : false;
-    console.debug("showMinute", showMinute);
     triggerPattern = fields["triggerPattern"].toLowerCase();
 
     updateTimer();
