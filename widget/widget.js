@@ -2,8 +2,8 @@ let isRunning = undefined, triggerPattern = null;
 let hideTimer = 15, hideTimeout = undefined;
 let soundAlertUrl = undefined;
 let showHour = true, showMinute = true;
-let hour = 0, minute = 15, second = 0;
-let resetHour = 0, resetMinute = 15, resetSecond = 0;
+let seconds = 0;
+let resetSecond = 0;
 
 function hideContainer() {
   document.getElementById("timer-widget").style = "display:none;";
@@ -16,21 +16,35 @@ function showContainer() {
 
 function updateTimer() {
   let timeToDisplay = "";
+  const hour = getHours(seconds);
   if (showHour) {
-    timeToDisplay += formatNumber(hour) + ":";
+    timeToDisplay += hour + ":";
   } else if (hour > 0) {
-    timeToDisplay += formatNumber(hour) + ":";
+    timeToDisplay += hour + ":";
   }
 
+  const minute = getMinutes(seconds);
   if (showMinute) {
-    timeToDisplay += formatNumber(minute) + ":";
+    timeToDisplay += minute + ":";
   } else if (minute > 0) {
-    timeToDisplay += formatNumber(minute) + ":";
+    timeToDisplay += minute + ":";
   }
 
-  timeToDisplay += formatNumber(second);
+  timeToDisplay += getSeconds(seconds);
 
   document.getElementById("timebox").innerHTML = timeToDisplay;
+}
+
+function getHours(num_seconds) {
+  return formatNumber(Math.floor(num_seconds / 3600));
+}
+
+function getMinutes(num_seconds) {
+  return formatNumber(Math.floor((num_seconds % 3600) / 60));
+}
+
+function getSeconds(num_seconds) {
+  return formatNumber(num_seconds % 60);
 }
 
 function formatNumber(number) {
@@ -50,7 +64,7 @@ function soundAlert() {
 
 function exectuteTick() {
   updateTimer();
-  if( hour === 0 && minute === 0 && second === 0) {
+  if( seconds === 0) {
     clearInterval(isRunning);
     isRunning = undefined;
     soundAlert();
@@ -59,23 +73,10 @@ function exectuteTick() {
     }
     return;
   }
-  if (second > 0) {
-    second -= 1;
-  } else {
-    if (minute > 0) {
-      minute -= 1;
-      second = 59;
-    } else {
-      hour -= 1;
-      minute = 59;
-      second = 59;
-    }
-  }
+  seconds -= 1;
 }
 
 function resetWidgetTime() {
-    hour = resetHour;
-    minute = resetMinute;
     second = resetSecond;
     isRunning = setInterval(exectuteTick, 1000);
     if (hideTimeout === undefined) {
@@ -101,10 +102,11 @@ window.addEventListener('onEventReceived', function (obj) {
 
 window.addEventListener('onWidgetLoad', function (obj) {
     const fields = obj["detail"]["fieldData"];
-    console.debug("########## Fields", fields)
-    hour = resetHour = fields["hour"];
-    minute = resetMinute = fields["minute"];
-    second = resetSecond = fields["second"];
+    let s = fields["hour"] * 3600;
+    s += fields["minute"] * 60;
+    s += fields["second"];
+    
+    seconds = resetSecond = s;
     soundAlertUrl = fields["alertSound"];
 
     hideTimer = fields["fadeAfterZero"];
