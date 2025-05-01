@@ -66,7 +66,7 @@ function soundAlert() {
     audio.play();
 }
 
-function exectuteTick() {
+function executeTick() {
     updateTimer();
     if( seconds === 0) {
         clearInterval(isRunning);
@@ -82,7 +82,7 @@ function exectuteTick() {
 
 function resetWidgetTime() {
     seconds = resetSecond;
-    isRunning = setInterval(exectuteTick, 1000);
+    isRunning = setInterval(executeTick, 1000);
     if (hideTimeout === undefined) {
         clearTimeout(hideTimeout);
         hideTimeout = undefined;
@@ -115,8 +115,8 @@ window.addEventListener('onWidgetLoad', function (obj) {
 
     hideTimer = fields["fadeAfterZero"];
 
-    showHour = fields["alwaysShowHour"] === "yes" ? true : false;
-    showMinute = fields["alwaysShowMinute"] === "yes" ? true : false;
+    showHour = fields["alwaysShowHour"] === "yes";
+    showMinute = fields["alwaysShowMinute"] === "yes";
     triggerPattern = fields["triggerPattern"].toLowerCase();
 
     updateTimer();
