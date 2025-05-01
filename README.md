@@ -1,8 +1,11 @@
 # timer-widget
-Stream elements widget for overlays, that is triggered when a redeem is triggered
+*Stream Elements* widget for overlays, that is triggered when a redeem is triggered
 
+| ![Example screenshot 1](images/timer-screenshot-1.png) | ![Example screenshot 2](images/timer-screenshot-2.png) |
+|--------------------------------------------------------|--------------------------------------------------------|
+|![img.png](images/timer-screenshot-3.png)| ![img.png](images/timer-screenshot-4.png)                                                       |
 ## How to use it?
-Go to your Stream Elements dashboard, and open the overlay you want to include the widget.
+Go to your *Stream Elements* dashboard, and open the overlay you want to include the widget.
 
 1. In the Overlay editor select the add custom widget.
 ![SE Overlay Editor - Add custom](images/overlay-editor-empty.png)
