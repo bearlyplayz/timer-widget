@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family={{fontName}}');
 
 * {
-    font-family: {{fontName}};    
+    font-family: {{fontName}};
     color: {{fontColor}};
     font-size: {{fontSize}}px;
     margin: 0px;
@@ -19,4 +19,16 @@
 
 #timebox {
     width: auto;
+}
+
+#filler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: {{fillerColor}};
+
+    width: 100%; /* Will be dynamically updated */
+    z-index: -10;
+    transition: width 1s linear;
 }

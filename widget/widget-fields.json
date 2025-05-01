@@ -1,21 +1,26 @@
 {
   "fontName": {
     "type": "googleFont",
-    "label": "Select a font:",
+    "label": "Font family:",
     "value": "Roboto"
   },
   "fontColor": {
     "type": "colorpicker",
-    "label": "Font Color",
-    "value": "#0000FF"
+    "label": "Font color",
+    "value": "rgb(0,0,0)"
   },
   "fontSize": {
     "type": "number",
-    "label": "Font Size (px)",
-    "value": 50,
+    "label": "Font size (px)",
+    "value": 20,
     "min": 10,
-    "max": 120,
+    "max": 100,
     "step": 1
+  },
+  "fillerColor": {
+    "type": "colorpicker",
+    "label": "Filler background color",
+    "value": "rgba(86, 248, 210, 0.33)"
   },
   "trigger": {
     "type": "dropdown",
