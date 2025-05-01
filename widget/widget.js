@@ -77,7 +77,7 @@ function exectuteTick() {
 }
 
 function resetWidgetTime() {
-    second = resetSecond;
+    seconds = resetSecond;
     isRunning = setInterval(exectuteTick, 1000);
     if (hideTimeout === undefined) {
       clearTimeout(hideTimeout);
