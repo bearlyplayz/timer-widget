@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family={{fontName}}');
+
+* {
+    font-family: {{fontName}};    
+    color: {{fontColor}};
+    font-size: {{fontSize}}px;
+    margin: 0px;
+    padding: 0px;
+}
+.elements {
+    display: inline-flex;
+    /* border-color: black;
+    border-style: dotted; */
+}
+
+#title {
+    width: auto;
+}
+
+#timebox {
+    width: auto;
+}
