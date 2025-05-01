@@ -51,6 +51,18 @@ function getSeconds(num_seconds) {
     return formatNumber(num_seconds % 60);
 }
 
+function getHours(num_seconds) {
+  return formatNumber(Math.floor(num_seconds / 3600));
+}
+
+function getMinutes(num_seconds) {
+  return formatNumber(Math.floor((num_seconds % 3600) / 60));
+}
+
+function getSeconds(num_seconds) {
+  return formatNumber(num_seconds % 60);
+}
+
 function formatNumber(number) {
     if (number <= 9) {
         return '0' + number;
@@ -109,12 +121,10 @@ window.addEventListener('onWidgetLoad', function (obj) {
     let s = fields["hour"] * 3600;
     s += fields["minute"] * 60;
     s += fields["second"];
-
     seconds = resetSecond = s;
+  
     soundAlertUrl = fields["alertSound"];
-
     hideTimer = fields["fadeAfterZero"];
-
     showHour = fields["alwaysShowHour"] === "yes";
     showMinute = fields["alwaysShowMinute"] === "yes";
     triggerPattern = fields["triggerPattern"].toLowerCase();
