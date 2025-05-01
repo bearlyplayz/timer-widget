@@ -1,0 +1,92 @@
+{
+  "fontName": {
+    "type": "googleFont",
+    "label": "Select a font:",
+    "value": "Roboto"
+  },
+  "fontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "#0000FF"
+  },
+  "fontSize": {
+    "type": "number",
+    "label": "Font Size (px)",
+    "value": 20,
+    "min": 10,
+    "max": 100,
+    "step": 1
+  },
+  "trigger": {
+    "type": "dropdown",
+    "label": "How is it activated?",
+    "value": "channelPoints",
+    "options": {
+      "channelPoints": "Channel points redemption"
+    }
+  },
+  "triggerPattern": {
+    "type": "text",
+    "label": "Name of the redeem (must match exactly)",
+    "value": ""
+  },
+  "title": {
+    "type": "text",
+    "label": "Title",
+    "value": "Timer"
+  },
+  "alertSound": {
+    "type": "sound-input",
+    "label": "Play alert when done"
+  },
+  "hour": {
+    "type": "number",
+    "label": "Hours",
+    "value": 0,
+    "min": 0,
+    "max": "999",
+    "step": 1
+  },
+  "minute": {
+    "type": "number",
+    "label": "Minutes",
+    "value": 10,
+    "min": 0,
+    "max": "59",
+    "step": 1
+  },
+  "second": {
+    "type": "number",
+    "label": "Seconds",
+    "value": 0,
+    "min": 0,
+    "max": "59",
+    "step": 1
+  },
+  "fadeAfterZero": {
+    "type": "number",
+    "label": "Fade after done: (Seconds)",
+    "value": 10,
+    "min": 0,
+    "max": 3600,
+    "step": 1
+  },
+  "alwaysShowHour": {
+    "type": "dropdown",
+    "label": "Always show the hours",
+    "value": "yes",
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  "alwaysShowMinute": {
+    "type": "dropdown",
+    "label": "Always show the minutes",
+    "value": "yes",
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  }
+}
