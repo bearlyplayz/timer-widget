@@ -38,7 +38,7 @@ Go to your *Stream Elements* dashboard, and open the overlay you want to include
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
 | **Font family**           | Select a font family to use, the widget uses Google fonts, you can select they one you like the most.                                                      | Roboto               |
 | **Font color**            | Select the color for the text of the widget.                                                                                                               | White                |
-| **Font size**             | Select the size of the text in the widget.                                                                                                                 | 20                   |
+| **Font size**             | Select the size of the text in the widget.                                                                                                                 | 50                   |
 | **How is it activated?**  | Maybe for the future, for now it only allows you to trigger the timer with user redeems.                                                                   | Channel point redeem |
 | **Name of the redeem**    | The exact name of your redeem as it shows on twitch. This is used to activate the timer,                                                                   | None                 |
 | **Title**                 | The title of the timer, it will show next to the countdown, or on top depending on the size of the box. If empty it will not show a title.                 | "Timer"              |

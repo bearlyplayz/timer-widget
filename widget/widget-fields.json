@@ -12,9 +12,9 @@
   "fontSize": {
     "type": "number",
     "label": "Font Size (px)",
-    "value": 20,
+    "value": 50,
     "min": 10,
-    "max": 100,
+    "max": 120,
     "step": 1
   },
   "trigger": {
